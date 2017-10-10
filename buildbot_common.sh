@@ -19,12 +19,17 @@ nprocs=`nproc`
 let one_half=$nprocs/2
 makej="-j ${one_half} -l ${nprocs}"
 
+# Assume that the buildbot script directory is in phylanx/tools/buildbot
+# of the phylanx project.
 tmptop=$( dirname "${scriptdir}" )
 top=${tmptop}/buildbot
 sourcedir=${top}/src
 buildprefix=${top}/build-${myarch}
 
-phylanx_src_dir=${tmptop}
+# Assume that the buildbot script directory is in phylanx/tools/buildbot
+# of the phylanx project. We need to go up one more directory to get
+# to the project root directory.
+phylanx_src_dir=$( dirname "${tmptop}" )
 phylanx_build_dir=${buildprefix}/phylanx-${buildtype}
 phylanx_install_dir=${buildprefix}/phylanx-${buildtype}-install
 

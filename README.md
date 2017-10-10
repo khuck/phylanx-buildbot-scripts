@@ -24,3 +24,10 @@ Working machine scripts:
 * grover (KNL-Linux with 68 cores, 4x threads per core, Intel 18, boost 1.65)
 * centaur (IBM Power8-Linux with 40 cores, 4x threads per core, Clang 5.0, boost 1.65)
 
+To get the scripts in the phylanx project:
+
+```
+git submodule update --recursive --remote
+git submodule foreach git pull origin master
+git submodule update --init tools/buildbot
+```
