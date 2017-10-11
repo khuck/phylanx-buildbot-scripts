@@ -110,7 +110,7 @@ fi
 # if necessary, build boost
 if [ ${myhost} == "delphi" ] || [ ${myhost} == "centaur" ] ; then
     if [ ! -d ${boost_path} ] ; then
-        ${scriptdir}/buildbot_boost.sh
+        ${scriptdir}/buildbot_boost.sh && :
     fi
 fi
 # do all the requested combinations
