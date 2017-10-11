@@ -25,7 +25,7 @@ if [ ! -d boost_1_65_0 ] ; then
 fi
 
 # track the output
-set -e
+set -x
 
 cd ${workdir}/boost_1_65_0
 if [ ${mycc} == "clang" ] ; then
@@ -35,7 +35,6 @@ else
 fi
 
 # there will be some boost errors.  Don't fail!
-unset -x
 
 if [ ${mycc} == "icc" ] ; then
     ./b2 ${makej} install toolset=intel address-model=64
