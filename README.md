@@ -1,4 +1,4 @@
-#Buildbot scripts for Phylanx project
+# Buildbot scripts for Phylanx project
 
 The scripts in this directory are used for launching regular, automated builds
 of the Phylanx project.  All dependencies are included, such as HPX, pybind11,
@@ -28,6 +28,6 @@ To get the scripts in the phylanx project:
 
 ```
 git submodule update --recursive --remote
-git submodule foreach git pull origin master
 git submodule update --init tools/buildbot
+git submodule foreach git pull origin master
 ```
