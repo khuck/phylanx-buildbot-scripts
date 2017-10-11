@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 set -x
 
 # where is this script?
@@ -24,6 +24,8 @@ if [ ! -d boost_1_65_0 ] ; then
     tar -xjf boost_1_65_0.tar.bz2
 fi
 
+# track the output
+set -e
 
 cd ${workdir}/boost_1_65_0
 if [ ${mycc} == "clang" ] ; then
