@@ -31,6 +31,10 @@ if [ ${mycc} == "clang" ] ; then
 else
     ./bootstrap.sh --prefix=${boost_path} --with-toolset=gcc
 fi
+
+# there will be some boost errors.  Don't fail!
+unset -x
+
 if [ ${mycc} == "icc" ] ; then
     ./b2 ${makej} install toolset=intel address-model=64
 elif [ ${mycc} == "clang" ] ; then
