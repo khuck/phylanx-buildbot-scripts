@@ -77,7 +77,7 @@ configure_it()
     NPROCS=`nproc`
     high_count=""
     if [ $NPROCS -gt 64 ] ; then
-        high_count="HPX_HAVE_MORE_THAN_64_THREADS=ON "
+        high_count="HPX_HAVE_MORE_THAN_64_THREADS=ON HPX_WITH_MAX_CPU_COUNT=${NPROCS} "
     fi
 
     set -x
