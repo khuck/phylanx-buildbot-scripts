@@ -74,6 +74,12 @@ configure_it()
         cmake_extras="-DHPX_WITH_MAX_CPU_COUNT=512"
     fi
 
+    NPROCS=`nproc`
+    high_count=""
+    if [ $NPROCS -gt 64 ] ; then
+        high_count="HPX_HAVE_MORE_THAN_64_THREADS=ON "
+    fi
+
     set -x
     cmake \
     -DCMAKE_BUILD_TYPE=${buildtype} \
@@ -87,6 +93,7 @@ configure_it()
     -DHPX_WITH_PARCEL_COALESCING=OFF \
     ${apex_opts} \
     ${cmake_extras} \
+    ${high_count} \
     ${hpx_src_dir}
 }
 
