@@ -50,8 +50,9 @@ get_source()
         git checkout develop
         git pull
     fi
-    # git checkout a7da13ca4a48b08db379534d8f2cbfd7265ca6fa
+    set +e
     patch -N CMakeLists.txt ${scriptdir}/hpx.patch
+    set -e
 }
 
 configure_it()
