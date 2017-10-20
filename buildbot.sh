@@ -41,7 +41,7 @@ while [ $# -ge 1 ]; do
             step_in="$2"
             ;;
         -h)
-            echo "$0 -c,--component [all|hpx|eigen3|pybind|phylanx] -t,--type [all|Release|RelWithDebInfo|Debug] -s,--step [all|configure|compile|test|install] -h,--help"
+            echo "$0 -c,--component [all|hpx|blaze|eigen3|pybind|phylanx] -t,--type [all|Release|RelWithDebInfo|Debug] -s,--step [all|configure|compile|test|install] -h,--help"
             exit 0
             ;;
     esac
@@ -75,7 +75,7 @@ loop_steps() {
 
 loop_components() {
     if [ ${component_in} == "all" ] ; then
-        for component in "hpx" "eigen3" "pybind" "phylanx" ; do
+        for component in "hpx" "eigen3" "blaze" "pybind" "phylanx" ; do
             export component
             loop_steps
         done
