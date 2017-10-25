@@ -51,6 +51,7 @@ build_phylanx()
 {
     cd ${phylanx_build_dir}
     make ${makej}
+    make install
 }
 
 test_phylanx()
