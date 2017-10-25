@@ -31,3 +31,10 @@ git submodule update --recursive --remote
 git submodule update --init tools/buildbot
 git submodule foreach git pull origin master
 ```
+
+# Build Status
+
+<object type="text/html" data="http://ktau.nic.uoregon.edu:8010/grid">
+</object>
+<iframe src="http://ktau.nic.uoregon.edu:8010/grid">
+</iframe>
