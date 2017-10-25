@@ -34,4 +34,4 @@ git submodule foreach git pull origin master
 
 # Build Status
 
-<div class='embed-container'><object data='http://ktau.nic.uoregon.edu:8020/grid'> </object></div>
+<div class='embed-container'><object data='http://ktau.nic.uoregon.edu:8020/grid' type="text/html" width="300" height="300"> http://ktau.nic.uoregon.edu:8020/grid</object></div>
