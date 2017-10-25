@@ -56,7 +56,7 @@ build_phylanx()
 test_phylanx()
 {
     cd ${phylanx_build_dir}
-    make tests
+    make ${makej} tests 
     make test
 }
 
