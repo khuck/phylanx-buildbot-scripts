@@ -21,12 +21,15 @@ export myarch=${host}-${arch}-${uname}-gcc
 export buildtype=Release
 export malloc=tcmalloc
 export malloc_path=/usr/local/packages/gperftools/2.5
-export activeharmony_path=/usr/local/packages/activeharmony/4.6.0-knl-gcc-6.1
+export activeharmony_path=/usr/local/packages/activeharmony/4.6.0-gcc
 export otf2_path=/usr/local/packages/otf2-2.1
 export papi_path=/usr/local/packages/papi/papi-knl/5.5.0/
 export boost_path=${basedir}/buildbot/build-${myarch}/boost-1.65.0
 export BOOST_DIR=${boost_path}
 export BOOST_ROOT=${boost_path}
+export LAPACK_ROOT=/usr/local/packages/lapack/3.7.1-gcc
+export BLAS_ROOT=/usr/local/packages/lapack/3.7.1-gcc
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
 
 echo ""
 echo "NB: "

@@ -31,9 +31,13 @@ configure_blaze()
     rm -rf ${blaze_build_dir}
     mkdir -p ${blaze_build_dir}
     cd ${blaze_build_dir}
+    set -x
     cmake \
     -DCMAKE_BUILD_TYPE=${buildtype} \
+    -DLAPACK_DIR=${LAPACK_ROOT} \
+    -DBLAS_DIR=${BLAS_ROOT} \
     -DCMAKE_INSTALL_PREFIX=. \
+    ${blaze_cmake_extras} \
     ${blaze_src_dir}
 }
 
