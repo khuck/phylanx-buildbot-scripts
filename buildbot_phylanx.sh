@@ -36,7 +36,6 @@ configure_phylanx()
     set -x
     cmake \
     -DCMAKE_BUILD_TYPE=${buildtype} \
-    -DEigen3_DIR=${eigen_build_dir}/share/eigen3/cmake \
     -Dblaze_INCLUDE_DIR=${blaze_build_dir}/include \
     -Dpybind11_DIR=${pybind_build_dir}/share/cmake/pybind11 \
     -DHPX_DIR=${HPX_ROOT}/lib/cmake/HPX \
