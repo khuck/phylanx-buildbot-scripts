@@ -32,12 +32,13 @@ configure_phylanx()
     export CFLAGS=${mycflags}
     export CXXFLAGS=${mycxxflags}
     export LDFLAGS=${myldflags}
+    export blaze_DIR=${blaze_build_dir}
 
     set -x
     cmake \
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -Dblaze_INCLUDE_DIR=${blaze_build_dir}/include \
-    -Dblaze_DIR=${blaze_build_dir}/share/cmake/blaze \
+    -Dblaze_DIR=${blaze_DIR} \
     -Dpybind11_DIR=${pybind_build_dir}/share/cmake/pybind11 \
     -DHPX_DIR=${HPX_ROOT}/lib/cmake/HPX \
     -DPHYLANX_WITH_PSEUDO_DEPENDENCIES=On \
