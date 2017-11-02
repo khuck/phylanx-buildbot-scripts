@@ -36,6 +36,8 @@ export BOOST_DIR=${boost_path}
 export BOOST_ROOT=${boost_path}
 export LAPACK_ROOT=/usr/local/packages/lapack/3.7.1-gcc
 export BLAS_ROOT=/usr/local/packages/ATLAS/3.10.3
+export LAPACK_ROOT=${LAPACK_DIR}
+export BLAS_ROOT=${BLAS_DIR}
 export blaze_cmake_extras="-DBLAS_LIBRARIES=/usr/local/packages/ATLAS/3.10.3/lib/libcblas.a -DLAPACK_LIBRARIES=/usr/local/packages/ATLAS/3.10.3/lib/liblapack.a"
 export cmake_extras=" -DHWLOC_ROOT=/usr/local/packages/hwloc/1.8 -DHPX_WITH_RDTSCP=OFF -DHPX_WITH_DEPRECATION_WARNINGS=Off "
 

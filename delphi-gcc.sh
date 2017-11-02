@@ -29,6 +29,8 @@ export BOOST_DIR=${boost_path}
 export BOOST_ROOT=${boost_path}
 export LAPACK_ROOT=/usr/local/packages/lapack/3.7.1-gcc
 export BLAS_ROOT=/usr/local/packages/lapack/3.7.1-gcc
+export LAPACK_ROOT=${LAPACK_DIR}
+export BLAS_ROOT=${BLAS_DIR}
 export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
 
 echo ""
