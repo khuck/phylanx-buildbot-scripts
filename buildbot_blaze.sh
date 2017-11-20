@@ -21,11 +21,15 @@ configure_blaze()
 {
     if [ ! -d ${blaze_src_dir} ] ; then
         cd ${top}/src
-        filename=blaze-3.2.tar.gz
+        #filename=blaze-3.2.tar.gz
+        filename=HEAD.tar.gz
         if [ ! -f ${filename} ] ; then
-            wget https://bitbucket.org/blaze-lib/blaze/downloads/${filename}
+            #wget https://bitbucket.org/blaze-lib/blaze/downloads/${filename}
+            wget https://bitbucket.org/blaze-lib/blaze/get/${filename}
         fi
+        echo "expanding tar file..."
         tar -xzf ${filename}
+        mv blaze-lib-blaze-* blaze-head
     fi
     echo "Removing old blaze build..."
     rm -rf ${blaze_build_dir}
@@ -33,10 +37,14 @@ configure_blaze()
     cd ${blaze_build_dir}
     set -x
     cmake \
+    -DCMAKE_CXX_COMPILER=`which ${mycxx}` \
+    -DCMAKE_C_COMPILER=`which ${mycc}` \
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -DLAPACK_DIR=${LAPACK_ROOT} \
     -DBLAS_DIR=${BLAS_ROOT} \
     -DCMAKE_INSTALL_PREFIX=. \
+    -DBLAZE_SMP_THREADS=HPX \
+    -DHPX_DIR=${HPX_ROOT}/lib/cmake/HPX \
     ${blaze_cmake_extras} \
     ${blaze_src_dir}
 }

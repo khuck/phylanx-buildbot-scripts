@@ -37,8 +37,10 @@ configure_phylanx()
     set -x
     cmake \
     -DCMAKE_BUILD_TYPE=${buildtype} \
-    -Dblaze_INCLUDE_DIR=${blaze_build_dir}/include \
     -Dblaze_DIR=${blaze_DIR} \
+    -DLAPACK_DIR=${LAPACK_ROOT} \
+    -DBLAS_DIR=${BLAS_ROOT} \
+    ${blaze_cmake_extras} \
     -Dpybind11_DIR=${pybind_build_dir}/share/cmake/pybind11 \
     -DHPX_DIR=${HPX_ROOT}/lib/cmake/HPX \
     -DPHYLANX_WITH_PSEUDO_DEPENDENCIES=On \
@@ -46,6 +48,7 @@ configure_phylanx()
     -DCMAKE_INSTALL_PREFIX=${phylanx_install_dir} \
     -DPYTHON_EXECUTABLE:FILEPATH=${pythonpath} \
     ${phylanx_src_dir}
+    #-Dblaze_INCLUDE_DIR=${blaze_build_dir}/include \
 }
 
 build_phylanx()

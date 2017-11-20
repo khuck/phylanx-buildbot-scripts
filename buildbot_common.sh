@@ -39,7 +39,7 @@ pybind_build_dir=${buildprefix}/pybind-${buildtype}
 eigen_src_dir=${sourcedir}/eigen-eigen-5a0156e40feb
 eigen_build_dir=${buildprefix}/eigen3-${buildtype}
 
-blaze_src_dir=${sourcedir}/blaze-3.2
+blaze_src_dir=${sourcedir}/blaze-head
 blaze_build_dir=${buildprefix}/blaze-${buildtype}
 
 hpx_src_dir=${sourcedir}/hpx

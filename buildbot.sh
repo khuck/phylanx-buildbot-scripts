@@ -75,7 +75,7 @@ loop_steps() {
 
 loop_components() {
     if [ ${component_in} == "all" ] ; then
-        for component in "hpx" "eigen3" "blaze" "pybind" "phylanx" ; do
+        for component in "hpx" "blaze" "pybind" "phylanx" ; do
             export component
             loop_steps
         done

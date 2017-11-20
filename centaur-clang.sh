@@ -34,11 +34,14 @@ export papi_path=/usr/local/packages/papi/5.5.1
 export boost_path=${basedir}/buildbot/build-${myarch}/boost-1.65.0
 export BOOST_DIR=${boost_path}
 export BOOST_ROOT=${boost_path}
-export LAPACK_ROOT=/usr/local/packages/lapack/3.7.1-gcc
-export BLAS_ROOT=/usr/local/packages/ATLAS/3.10.3
+export LAPACK_DIR=/usr/local/packages/lapack/3.7.1-gcc
+#export BLAS_ROOT=/usr/local/packages/ATLAS/3.10.3
+export BLAS_DIR=/usr/local/packages/lapack/3.7.1-gcc
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/packages/lapack/3.7.1-gcc/lib64/pkgconfig
 export LAPACK_ROOT=${LAPACK_DIR}
 export BLAS_ROOT=${BLAS_DIR}
-export blaze_cmake_extras="-DBLAS_LIBRARIES=/usr/local/packages/ATLAS/3.10.3/lib/libcblas.a -DLAPACK_LIBRARIES=/usr/local/packages/ATLAS/3.10.3/lib/liblapack.a"
+#export blaze_cmake_extras="-DBLAS_LIBRARIES=/usr/local/packages/ATLAS/3.10.3/lib/libcblas.a -DLAPACK_LIBRARIES=/usr/local/packages/ATLAS/3.10.3/lib/liblapack.a"
+export blaze_cmake_extras="-DBLAS_LIBRARIES=${BLAS_DIR}/lib64/libblas.so -DLAPACK_LIBRARIES=${LAPACK_DIR}/lib64/liblapack.so"
 export cmake_extras=" -DHWLOC_ROOT=/usr/local/packages/hwloc/1.8 -DHPX_WITH_RDTSCP=OFF -DHPX_WITH_DEPRECATION_WARNINGS=Off "
 
 echo ""
