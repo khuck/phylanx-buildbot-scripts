@@ -33,7 +33,7 @@ export malloc_path=/usr/local/packages/gperftools/2.5
 export activeharmony_path=/usr/local/packages/activeharmony/4.6.0-knl-gcc-6.1
 export otf2_path=/usr/local/packages/otf2-2.0
 export papi_path=/usr/local/packages/papi/papi-knl/5.5.0/
-export boost_path=/usr/local/packages/boost/1.65.0
+export boost_path=/usr/local/packages/boost/1.65.0-knl-intel18
 export BOOST_ROOT=${boost_path}
 export Boost_DIR=${boost_path}
 
