@@ -48,7 +48,7 @@ get_source()
     git pull
     if [ -d apex ] ; then
         cd apex
-        git checkout develop
+        git checkout master
         git pull
     fi
 }
