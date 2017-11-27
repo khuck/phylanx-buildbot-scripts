@@ -39,7 +39,8 @@ get_source()
 {
     if [ ! -d ${hpx_src_dir} ] ; then
         cd $(dirname ${hpx_src_dir})
-        git clone https://github.com/STEllAR-GROUP/hpx.git
+        #git clone https://github.com/STEllAR-GROUP/hpx.git
+        git clone --depth 1 https://github.com/STEllAR-GROUP/hpx.git -b master
     fi
     cd ${hpx_src_dir}
     git reset --hard
@@ -50,9 +51,6 @@ get_source()
         git checkout develop
         git pull
     fi
-    set +e
-    patch -N CMakeLists.txt ${scriptdir}/hpx.patch
-    set -e
 }
 
 configure_it()
