@@ -16,7 +16,7 @@ if [ -z ${myarch} ] ; then
 fi
 
 nprocs=`nproc`
-let one_half=$nprocs/2
+let one_half=$nprocs/4
 makej="-j ${one_half} -l ${nprocs}"
 
 # Assume that the buildbot script directory is in phylanx/tools/buildbot
