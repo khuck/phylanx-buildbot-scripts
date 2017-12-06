@@ -40,6 +40,7 @@ configure_pybind()
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -DDOWNLOAD_CATCH=1 \
     -DPYTHON_EXECUTABLE:FILEPATH=${pythonpath} \
+    -DPYBIND11_TEST=FALSE \
     -DCMAKE_INSTALL_PREFIX=. \
     ${pybind_src_dir}
 }
