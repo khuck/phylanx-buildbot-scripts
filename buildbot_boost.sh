@@ -12,9 +12,10 @@ if [ -z ${hpx_src_dir} ] ; then
 fi
 
 workdir=/dev/shm/src
-if [ "${host}" == "centaur" ] || [ "${host}" == "delphi" ] || [ "${host}" == "grover" ] ; then
+if [ "${host}" == "centaur" ] || [ "${host}" == "delphi" ] || [ "${host}" == "grover" || [ "${host}" == "talapas" ] ; then
     workdir=${sourcedir}/boost
 fi
+
 mkdir -p ${workdir}
 cd ${workdir}
 if [ ! -d boost_1_65_0 ] ; then

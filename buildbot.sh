@@ -6,6 +6,10 @@ if [ -z ${scriptdir} ] ; then
 fi
 
 myhost=`hostname`
+
+if [ ${host} == "talapas" ] ; then
+    myhost=${host}
+fi
 # load common settings
 if [ ${myhost} == "ktau" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
@@ -15,6 +19,8 @@ elif [ ${myhost} == "grover" ] ; then
     . ${scriptdir}/${myhost}-intel.sh
 elif [ ${myhost} == "centaur" ] ; then
     . ${scriptdir}/${myhost}-clang.sh
+elif [ ${myhost} == "talapas" ] ; then
+    . ${scriptdir}/${myhost}-gcc.sh
 fi
 . ${scriptdir}/buildbot_common.sh
 
@@ -107,11 +113,25 @@ if [ ! -d ${sourcedir} ] ; then
     mkdir -p ${sourcedir}
 fi
 
+if [ ${myhost} == "talapas" ] ; then
+    if [ ! -d ${hwloc_path} ] ; then
+        ${scriptdir}/buildbot_hwloc.sh && :
+    fi
+    if [ ! -d ${otf2_path} ] ; then
+        ${scriptdir}/buildbot_otf2.sh && :
+    fi
+    if [ ! -d ${lapack_path} ] ; then
+        ${scriptdir}/buildbot_lapack.sh && :
+    fi
+fi
+
 # if necessary, build boost
-if [ ${myhost} == "delphi" ] || [ ${myhost} == "centaur" ] ; then
+if [ ${myhost} == "delphi" ] || [ ${myhost} == "centaur" ] || [ ${myhost} == "talapas" ] ; then
     if [ ! -d ${boost_path} ] ; then
         ${scriptdir}/buildbot_boost.sh && :
     fi
 fi
+
+
 # do all the requested combinations
 loop_buildtypes
