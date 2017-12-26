@@ -9,9 +9,6 @@ module list
 export mycflags="-xMIC_AVX512"
 export mycxxflags="-xMIC_AVX512"
 export myldflags="-xMIC_AVX512"
-# export mycflags="-fPIC -march=native"
-# export mycxxflags="-fPIC -march=native"
-# export myldflags="-fPIC -march=native"
 export mycc=icc
 export mycxx=icpc
 export myfc=ifort
