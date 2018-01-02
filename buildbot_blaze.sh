@@ -25,8 +25,9 @@ configure_blaze()
         filename=HEAD.tar.gz
         if [ ! -f ${filename} ] ; then
             #wget https://bitbucket.org/blaze-lib/blaze/downloads/${filename}
-            wget https://bitbucket.org/blaze-lib/blaze/get/${filename}
+            rm ${filename}
         fi
+        wget https://bitbucket.org/blaze-lib/blaze/get/${filename}
         echo "expanding tar file..."
         tar -xzf ${filename}
         mv blaze-lib-blaze-* blaze-head
