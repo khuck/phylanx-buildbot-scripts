@@ -23,7 +23,7 @@ configure_blaze()
         cd ${top}/src
         #filename=blaze-3.2.tar.gz
         filename=HEAD.tar.gz
-        if [ ! -f ${filename} ] ; then
+        if [ -f ${filename} ] ; then
             #wget https://bitbucket.org/blaze-lib/blaze/downloads/${filename}
             rm ${filename}
         fi
