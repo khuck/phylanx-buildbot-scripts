@@ -7,7 +7,7 @@ fi
 
 myhost=`hostname`
 
-if [ ${host} == "talapas" ] ; then
+if [ "x${host}" == "xtalapas" ] ; then
     myhost=${host}
 fi
 # load common settings
@@ -16,7 +16,7 @@ if [ ${myhost} == "ktau" ] ; then
 elif [ ${myhost} == "delphi" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "grover" ] ; then
-    . ${scriptdir}/${myhost}-intel.sh
+    . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "centaur" ] ; then
     . ${scriptdir}/${myhost}-clang.sh
 elif [ ${myhost} == "talapas" ] ; then
@@ -132,6 +132,13 @@ if [ ${myhost} == "delphi" ] || [ ${myhost} == "centaur" ] || [ ${myhost} == "ta
     fi
 fi
 
+# Get time as a UNIX timestamp (seconds elapsed since Jan 1, 1970 0:00 UTC)
+T="$(date +%s)"
 
 # do all the requested combinations
 loop_buildtypes
+
+printf "\nSUCCESS!\n"
+T="$(($(date +%s)-T))"
+printf "Time to configure and build Phylanx: %02d hours %02d minutes %02d seconds.\n" "$((T/3600))" "$((T/60%60))" "$((T%60))"
+

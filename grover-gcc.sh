@@ -7,9 +7,12 @@ module list
 # PATH=/usr/local/packages/cmake/3.9.3/bin:$PATH
 
 # special flags for some library builds
-export mycflags="-mavx512cd -mavx512er -mavx512pf"
-export mycxxflags="-mavx512cd -mavx512er -mavx512pf"
-export myldflags="-mavx512cd -mavx512er -mavx512pf"
+export mycflags="-fPIC -march=knl"
+export mycxxflags="-fPIC -march=knl"
+export myldflags="-fPIC -march=knl -latomic"
+#export mycflags="-fPIC"
+#export mycxxflags="-fPIC"
+#export myldflags="-fPIC"
 export mycc=gcc
 export mycxx=g++
 export myfc=gfortran
@@ -17,6 +20,10 @@ export myfc=gfortran
 export CC=${mycc}
 export CXX=${mycxx}
 export F90=${myfc}
+export CFLAGS=${mycflags}
+export FFLAGS=${mycflags}
+export CXXFLAGS=${mycxxflags}
+export LDFLAGS=${myldcflags}
 
 export host=grover
 arch=`arch`_knl
@@ -34,7 +41,7 @@ export malloc_path=/usr/local/packages/gperftools/2.5
 export activeharmony_path=/usr/local/packages/activeharmony/4.6.0-knl-gcc-6.1
 export otf2_path=/usr/local/packages/otf2-2.0
 export papi_path=/usr/local/packages/papi/papi-knl/5.5.0/
-export boost_path=/usr/local/packages/boost/1.65.0-knl-gcc7
+export boost_path=/usr/local/packages/boost/1.65.0-knl-gcc7_avx
 export BOOST_ROOT=${boost_path}
 export BOOST_DIR=${boost_path}
 #export LAPACK_ROOT=/usr/local/packages/lapack/3.7.1-gcc

@@ -32,7 +32,7 @@ cd ${workdir}/boost_1_65_0
 if [ ${mycc} == "clang" ] ; then
     ./bootstrap.sh --prefix=${boost_path} --with-toolset=clang
 else
-    ./bootstrap.sh --prefix=${boost_path} --with-toolset=gcc
+    ./bootstrap.sh --prefix=${boost_path}_avx --with-toolset=gcc
 fi
 
 # there will be some boost errors.  Don't fail!
@@ -42,6 +42,6 @@ if [ ${mycc} == "icc" ] ; then
 elif [ ${mycc} == "clang" ] ; then
     ./b2 ${makej} install toolset=clang address-model=64
 else
-    ./b2 ${makej} install cxxflags="-std=c++11"
+    ./b2 ${makej} install cxxflags="-std=c++11 ${mycxxflags}"
 fi
 
