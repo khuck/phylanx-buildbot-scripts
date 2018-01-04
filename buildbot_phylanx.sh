@@ -62,7 +62,7 @@ test_phylanx()
 {
     cd ${phylanx_build_dir}
     make ${makej} tests 
-    make test
+    #make test
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
