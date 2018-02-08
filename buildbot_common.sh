@@ -17,6 +17,7 @@ fi
 
 nprocs=`nproc`
 let one_half=$nprocs/4
+one_half=$(( one_half > 16 ? 16 : one_half ))
 makej="-j ${one_half} -l ${nprocs}"
 
 # Assume that the buildbot script directory is in phylanx/tools/buildbot
