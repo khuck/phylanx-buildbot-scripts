@@ -66,7 +66,25 @@ configure_it()
     else
         alloc_opts="-DHPX_WITH_MALLOC=system"
     fi
-    apex_opts="-DHPX_WITH_APEX=TRUE -DAPEX_WITH_ACTIVEHARMONY=TRUE -DACTIVEHARMONY_ROOT=${activeharmony_path} -DAPEX_WITH_OTF2=TRUE -DOTF2_ROOT=${otf2_path} -DAPEX_WITH_PAPI=TRUE -DPAPI_ROOT=${papi_path} -DHPX_WITH_APEX_NO_UPDATE=FALSE "
+    papi_opts=""
+    otf2_opts=""
+    activeharmony_opts=""
+    if [ "${papi_path}" == "" ] ; then
+        papi_opts="-DAPEX_WITH_PAPI=FALSE"
+    else
+        papi_opts="-DAPEX_WITH_PAPI=TRUE -DPAPI_ROOT=${papi_path}"
+    fi
+    if [ "${otf2_path}" == "" ] ; then
+        otf2_opts="-DAPEX_WITH_OTF2=FALSE"
+    else
+        otf2_opts="-DAPEX_WITH_OTF2=TRUE -DOTF2_ROOT=${otf2_path}"
+    fi
+    if [ "${activeharmony_path}" == "" ] ; then
+        activeharmony_opts="-DAPEX_WITH_ACTIVEHARMONY=FALSE"
+    else
+        activeharmony_opts="-DAPEX_WITH_ACTIVEHARMONY=TRUE -DACTIVEHARMONY_ROOT=${activeharmony_path}"
+    fi
+    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=FALSE "
     export CC=${mycc}
     export CXX=${mycxx}
     export FC=${myfc}
@@ -74,10 +92,9 @@ configure_it()
     export CXXFLAGS=${mycxxflags}
     export LDFLAGS=${myldflags}
 
-    NPROCS=`nproc`
     high_count=""
-    if [ $NPROCS -gt 64 ] ; then
-        high_count="-DHPX_WITH_MAX_CPU_COUNT=${NPROCS} "
+    if [ $nprocs -gt 64 ] ; then
+        high_count="-DHPX_WITH_MAX_CPU_COUNT=${nprocs} "
     fi
 
     set -x

@@ -15,8 +15,19 @@ if [ -z ${myarch} ] ; then
 
 fi
 
-nprocs=`nproc`
-let one_half=$nprocs/4
+export nprocs=2
+osname=`uname`
+if [ ${osname} == "Darwin" ]; then
+nprocs=`sysctl -n hw.ncpu`
+else
+nprocs=`nproc --all`
+fi
+
+if [ $nprocs -lt 16 ] ; then
+    let one_half=$nprocs
+else
+    let one_half=$nprocs/4
+fi
 makej="-j ${one_half} -l ${nprocs}"
 makejtest="-j 4 -l ${nprocs}"
 

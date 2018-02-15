@@ -6,6 +6,7 @@ if [ -z ${scriptdir} ] ; then
 fi
 
 myhost=`hostname`
+osname=`uname`
 
 if [ "x${host}" == "xtalapas" ] ; then
     myhost=${host}
@@ -21,7 +22,10 @@ elif [ ${myhost} == "centaur" ] ; then
     . ${scriptdir}/${myhost}-clang.sh
 elif [ ${myhost} == "talapas" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
+elif [ ${osname} == "Darwin" ]; then
+    . ${scriptdir}/osx.sh
 fi
+
 . ${scriptdir}/buildbot_common.sh
 
 args=$(getopt -l "searchpath:" -o "c:t:s:h" -- "$@")
