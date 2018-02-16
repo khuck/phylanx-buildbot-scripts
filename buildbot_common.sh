@@ -17,10 +17,11 @@ fi
 
 export nprocs=2
 osname=`uname`
+hostname=`hostname`
 if [ ${osname} == "Darwin" ]; then
-nprocs=`sysctl -n hw.ncpu`
+    nprocs=`sysctl -n hw.ncpu`
 else
-nprocs=`nproc --all`
+    nprocs=`nproc --all`
 fi
 
 if [ $nprocs -lt 16 ] ; then
@@ -28,8 +29,14 @@ if [ $nprocs -lt 16 ] ; then
 else
     let one_half=$nprocs/4
 fi
+
 makej="-j ${one_half} -l ${nprocs}"
-makejtest="-j 4 -l ${nprocs}"
+
+if [ ${hostname} == "taudev" ]; then
+    makejtest="-j 2 -l ${nprocs}"
+else
+    makejtest="-j 4 -l ${nprocs}"
+fi
 
 # Assume that the buildbot script directory is in phylanx/tools/buildbot
 # of the phylanx project.

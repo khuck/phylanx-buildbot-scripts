@@ -22,6 +22,8 @@ elif [ ${myhost} == "centaur" ] ; then
     . ${scriptdir}/${myhost}-clang.sh
 elif [ ${myhost} == "talapas" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
+elif [ ${myhost} == "taudev" ] ; then
+    . ${scriptdir}/${myhost}.sh
 elif [ ${osname} == "Darwin" ]; then
     . ${scriptdir}/osx.sh
 fi
