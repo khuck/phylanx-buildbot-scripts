@@ -21,12 +21,9 @@ configure_blaze()
 {
     if [ ! -d ${blaze_src_dir} ] ; then
         cd ${top}/src
-        #filename=blaze-3.2.tar.gz
         filename=HEAD.tar.gz
-        if [ -f ${filename} ] ; then
-            #wget https://bitbucket.org/blaze-lib/blaze/downloads/${filename}
-            rm ${filename}
-        fi
+        # force new download of blaze
+        rm -f ${filename} blaze*
         wget https://bitbucket.org/blaze-lib/blaze/get/${filename}
         echo "expanding tar file..."
         tar -xzf ${filename}
