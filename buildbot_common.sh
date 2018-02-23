@@ -24,10 +24,14 @@ else
     nprocs=`nproc --all`
 fi
 
+let one_half=$nprocs/4
+# laptops and so forth can go full steam ahead...
 if [ $nprocs -lt 16 ] ; then
-    let one_half=$nprocs
-else
-    let one_half=$nprocs/4
+    let one_half=$nprocs/2
+fi
+# The KNL gets bogged down with 68 concurrent builds...
+if [ $nprocs -gt 160 ] ; then
+    let one_half=$nprocs/8
 fi
 
 makej="-j ${one_half} -l ${nprocs}"
