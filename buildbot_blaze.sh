@@ -19,16 +19,15 @@ fi
 
 configure_blaze()
 {
-    if [ ! -d ${blaze_src_dir} ] ; then
-        cd ${top}/src
-        filename=HEAD.tar.gz
-        # force new download of blaze
-        rm -f ${filename} blaze*
-        wget https://bitbucket.org/blaze-lib/blaze/get/${filename}
-        echo "expanding tar file..."
-        tar -xzf ${filename}
-        mv blaze-lib-blaze-* blaze-head
-    fi
+    cd ${top}/src
+    filename=HEAD.tar.gz
+    # force new download of blaze
+    rm -f ${filename}
+    rm -rf blaze*
+    wget https://bitbucket.org/blaze-lib/blaze/get/${filename}
+    echo "expanding tar file..."
+    tar -xzf ${filename}
+    mv blaze-lib-blaze-* blaze-head
     echo "Removing old blaze build..."
     rm -rf ${blaze_build_dir}
     mkdir -p ${blaze_build_dir}
