@@ -15,8 +15,8 @@ fi
 export basedir=$( dirname "${scriptdir}" )
 export myarch=${host}-${arch}-${uname}-${mycc}
 export buildtype=Release
-export malloc=tcmalloc
-export malloc_path=/opt/local
+export malloc=system
+export malloc_path=
 export activeharmony_path=$HOME/install/activeharmony/4.6
 export otf2_path=$HOME/install/otf2/2.1
 export papi_path=""
@@ -32,6 +32,8 @@ export BLAS_ROOT=${BLAS_DIR}
 export hwloc_path=/opt/local
 # export blaze_cmake_extras="-DBLAS_LIBRARIES=${BLAS_DIR}/lib64/libblas.so -DLAPACK_LIBRARIES=${LAPACK_DIR}/lib64/liblapack.so"
 export cmake_extras=" -DHPX_WITH_RDTSCP=OFF -DHPX_WITH_DEPRECATION_WARNINGS=Off "
+#export cmake_generator="-G Xcode"
+export cmake_generator=""
 
 echo ""
 echo "NB: "
