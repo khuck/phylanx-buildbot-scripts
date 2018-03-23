@@ -29,11 +29,13 @@ export papi_path=/usr/local/packages/papi/papi-knl/5.5.0/
 export boost_path=/usr/local/packages/boost/1.65.0-gcc7
 export BOOST_DIR=${boost_path}
 export BOOST_ROOT=${boost_path}
-export LAPACK_ROOT=/usr/local/packages/lapack/3.7.1-gcc
-export BLAS_ROOT=/usr/local/packages/lapack/3.7.1-gcc
+export LAPACK_DIR=/usr/local/packages/lapack/3.7.1-gcc
+export BLAS_DIR=/usr/local/packages/lapack/3.7.1-gcc
 export LAPACK_ROOT=${LAPACK_DIR}
 export BLAS_ROOT=${BLAS_DIR}
+export HDF5_ROOT=/usr/local/packages/hdf5/1.10.1-gcc-6.4
 export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
+export HDF5_LDFLAGS="-L/usr/local/packages/szip/2.1/gcc-4.9/lib -ldl -lz -lsz"
 
 echo ""
 echo "NB: "

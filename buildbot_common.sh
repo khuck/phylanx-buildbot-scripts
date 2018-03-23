@@ -65,6 +65,9 @@ eigen_build_dir=${buildprefix}/eigen3-${buildtype}
 blaze_src_dir=${sourcedir}/blaze-head
 blaze_build_dir=${buildprefix}/blaze-${buildtype}
 
+high5_src_dir=${sourcedir}/HighFive-1.5
+high5_build_dir=${buildprefix}/high5-${buildtype}
+
 hpx_src_dir=${sourcedir}/hpx
 HPX_ROOT=${buildprefix}/hpx-${buildtype}
 

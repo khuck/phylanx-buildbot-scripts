@@ -48,8 +48,10 @@ get_source()
     git pull
     if [ -d apex ] ; then
         cd apex
+        git fetch --tags
         git checkout master
         git pull
+        cd ..
     fi
 }
 
@@ -108,6 +110,7 @@ configure_it()
     -DHPX_WITH_THREAD_IDLE_RATES=ON \
     -DHPX_WITH_PARCELPORT_MPI=OFF \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
+    -DHPX_WITH_TOOLS=ON \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
