@@ -45,7 +45,6 @@ get_source()
     cd ${hpx_src_dir}
     git reset --hard
     git checkout master
-    git checkout apex_refactoring_fix_rebind
     git pull
     if [ -d apex ] ; then
         cd apex
