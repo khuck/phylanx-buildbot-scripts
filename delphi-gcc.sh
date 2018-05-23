@@ -5,6 +5,10 @@ module list
 export CMAKE=/usr/local/packages/cmake/3.9.3
 PATH=/usr/local/packages/cmake/3.9.3/bin:$PATH
 
+# special flags for some library builds
+export mycflags="-fPIC"
+export mycxxflags="-fPIC"
+export myldflags="-fPIC -Wl,--allow-multiple-definition"
 export mycc=gcc
 export mycxx=g++
 export myfc=gfortran
