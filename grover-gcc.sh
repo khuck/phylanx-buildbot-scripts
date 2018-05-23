@@ -9,7 +9,7 @@ module list
 # special flags for some library builds
 export mycflags="-fPIC -march=knl"
 export mycxxflags="-fPIC -march=knl"
-export myldflags="-fPIC -march=knl -latomic"
+export myldflags="-fPIC -march=knl -latomic -Wl,--allow-multiple-definition"
 #export mycflags="-fPIC"
 #export mycxxflags="-fPIC"
 #export myldflags="-fPIC"
