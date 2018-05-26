@@ -6,9 +6,9 @@ module load python/3.6.0
 module list
 
 # special flags for some library builds
-export mycflags="-xMIC_AVX512"
-export mycxxflags="-xMIC_AVX512"
-export myldflags="-xMIC_AVX512"
+export mycflags="-fPIC -xMIC_AVX512"
+export mycxxflags="-fPIC -xMIC_AVX512"
+export myldflags="-fPIC -xMIC_AVX512 -latomic -Wl,--allow-multiple-definition"
 export mycc=icc
 export mycxx=icpc
 export myfc=ifort
@@ -16,12 +16,19 @@ export myfc=ifort
 export CC=${mycc}
 export CXX=${mycxx}
 export F90=${myfc}
+export CFLAGS=${mycflags}
+export FFLAGS=${mycflags}
+export CXXFLAGS=${mycxxflags}
+export LDFLAGS=${myldcflags}
 
-host=grover
+export host=grover
 arch=`arch`_knl
 uname=`uname`
 
-export basedir=${HOME}/src/phylanx
+if [ -z ${scriptdir} ] ; then
+    scriptdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+fi
+export basedir=$( dirname "${scriptdir}" )
 export myarch=${host}-${arch}-${uname}-intel
 export buildtype=Release
 export malloc=tcmalloc

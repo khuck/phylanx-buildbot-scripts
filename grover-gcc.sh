@@ -10,9 +10,6 @@ module list
 export mycflags="-fPIC -march=knl"
 export mycxxflags="-fPIC -march=knl"
 export myldflags="-fPIC -march=knl -latomic -Wl,--allow-multiple-definition"
-#export mycflags="-fPIC"
-#export mycxxflags="-fPIC"
-#export myldflags="-fPIC"
 export mycc=gcc
 export mycxx=g++
 export myfc=gfortran
