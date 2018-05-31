@@ -38,6 +38,12 @@ makej="-j ${one_half} -l ${nprocs}"
 
 if [ ${hostname} == "taudev" ]; then
     makejtest="-j 2 -l ${nprocs}"
+elif [ ${hostname} == "grover" ]; then
+    makejtest="-j 20 -l ${one_half}"
+elif [ ${hostname} == "delphi" ]; then
+    makejtest="-j 16 -l ${one_half}"
+elif [ ${hostname} == "centaur" ]; then
+    makejtest="-j 20 -l ${one_half}"
 else
     makejtest="-j 4 -l ${nprocs}"
 fi
