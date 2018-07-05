@@ -34,6 +34,14 @@ git submodule foreach git pull origin master
 
 # Build Status
 
-[![http://ktau.nic.uoregon.edu:8020/grid](http://ktau.nic.uoregon.edu:8020/grid)](http://ktau.nic.uoregon.edu:8020/grid).
+[![x86_64 release build status](http://ktau.nic.uoregon.edu:8020/badges/x86_64-gcc7-release.svg?left_text=x86_64-gcc7-release)](http://ktau.nic.uoregon.edu:8020/#/)
+[![KNL release build status](http://ktau.nic.uoregon.edu:8020/badges/knl-gcc7-release.svg?left_text=KNL-gcc7-release)](http://ktau.nic.uoregon.edu:8020/#/)
+[![POWER8 release build status](http://ktau.nic.uoregon.edu:8020/badges/ppc64le-clang5-release.svg?left_text=POWER8-clang5-release)](http://ktau.nic.uoregon.edu:8020/#/)
 
-<div class='embed-container'><object data='http://ktau.nic.uoregon.edu:8020/grid' type="text/html" width="300" height="300"> http://ktau.nic.uoregon.edu:8020/grid</object></div>
+[![x86_64 release build status](http://ktau.nic.uoregon.edu:8020/badges/x86_64-gcc7-relwithdebinfo.svg?left_text=x86_64-gcc7-relwithdebinfo)](http://ktau.nic.uoregon.edu:8020/#/)
+[![KNL release build status](http://ktau.nic.uoregon.edu:8020/badges/knl-gcc7-relwithdebinfo.svg?left_text=KNL-gcc7-relwithdebinfo)](http://ktau.nic.uoregon.edu:8020/#/)
+[![POWER8 release build status](http://ktau.nic.uoregon.edu:8020/badges/ppc64le-clang5-relwithdebinfo.svg?left_text=POWER8-clang5-relwithdebinfo)](http://ktau.nic.uoregon.edu:8020/#/)
+
+[![x86_64 debug build status](http://ktau.nic.uoregon.edu:8020/badges/x86_64-gcc7-debug.svg?left_text=x86_64-gcc7-debug)](http://ktau.nic.uoregon.edu:8020/#/)
+[![KNL debug build status](http://ktau.nic.uoregon.edu:8020/badges/knl-gcc7-debug.svg?left_text=KNL-gcc7-debug)](http://ktau.nic.uoregon.edu:8020/#/)
+[![POWER8 debug build status](http://ktau.nic.uoregon.edu:8020/badges/ppc64le-clang5-debug.svg?left_text=POWER8-clang5-debug)](http://ktau.nic.uoregon.edu:8020/#/)
