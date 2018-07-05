@@ -65,12 +65,12 @@ build_phylanx()
 test_phylanx()
 {
     cd ${phylanx_build_dir}
-    set +e
+#    set +e
     make ${makejtest} -k tests 
-    rc=$?
-    if [ $rc -ne 0 ] ; then
-        make test
-    fi
+#    rc=$?
+#    if [ $rc -ne 0 ] ; then
+#        make test
+#    fi
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
