@@ -111,6 +111,7 @@ configure_it()
     -DHPX_WITH_PARCELPORT_MPI=OFF \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
     -DHPX_WITH_TOOLS=ON \
+    -DHPX_WITH_DYNAMIC_HPX_MAIN=OFF \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
