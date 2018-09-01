@@ -49,7 +49,7 @@ get_source()
     if [ -d apex ] ; then
         cd apex
         git fetch --tags
-        git checkout master
+        git checkout develop
         git pull
         cd ..
     fi
@@ -87,7 +87,7 @@ configure_it()
     else
         activeharmony_opts="-DAPEX_WITH_ACTIVEHARMONY=TRUE -DACTIVEHARMONY_ROOT=${activeharmony_path}"
     fi
-    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=FALSE "
+    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=TRUE -DHPX_WITH_APEX_TAG=develop"
     export CC=${mycc}
     export CXX=${mycxx}
     export FC=${myfc}
@@ -108,10 +108,9 @@ configure_it()
     -DHWLOC_ROOT=${hwloc_path} \
     -DCMAKE_INSTALL_PREFIX=. \
     -DHPX_WITH_THREAD_IDLE_RATES=ON \
-    -DHPX_WITH_PARCELPORT_MPI=OFF \
+    -DHPX_WITH_PARCELPORT_MPI=ON \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
     -DHPX_WITH_TOOLS=ON \
-    -DHPX_WITH_DYNAMIC_HPX_MAIN=OFF \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
