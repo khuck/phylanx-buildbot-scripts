@@ -48,6 +48,9 @@ export BOOST_DIR=${boost_path}
 #export BLAS_ROOT=${BLAS_DIR}
 #export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
 
+export MPICC=mpicc
+export MPICXX=mpicxx
+
 echo ""
 echo "NB: "
 echo "basedir is set to ${basedir}."
@@ -55,3 +58,7 @@ echo "  All paths are relative to that base."
 echo "myarch is set to ${myarch}."
 echo "  Build output will be in ${basedir}/build-${myarch}."
 echo ""
+echo "CC = `which $mycc`"
+echo "CXX = `which $mycxx`"
+echo "MPICC = `which mpicc`"
+echo "MPICXX = `which mpicxx`"
