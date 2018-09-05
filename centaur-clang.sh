@@ -45,6 +45,9 @@ export BLAS_ROOT=${BLAS_DIR}
 export blaze_cmake_extras="-DBLAS_LIBRARIES=${BLAS_DIR}/lib64/libblas.so -DLAPACK_LIBRARIES=${LAPACK_DIR}/lib64/liblapack.so"
 export cmake_extras=" -DHWLOC_ROOT=/usr/local/packages/hwloc/1.8 -DHPX_WITH_RDTSCP=OFF -DHPX_WITH_DEPRECATION_WARNINGS=Off "
 
+export MPICC=mpicc
+export MPICXX=mpicxx
+
 echo ""
 echo "NB: "
 echo "basedir is set to ${basedir}."
@@ -52,3 +55,7 @@ echo "  All paths are relative to that base."
 echo "myarch is set to ${myarch}."
 echo "  Build output will be in ${basedir}/build-${myarch}."
 echo ""
+echo "CC = `which $mycc`"
+echo "CXX = `which $mycxx`"
+echo "MPICC = `which mpicc`"
+echo "MPICXX = `which mpicxx`"
