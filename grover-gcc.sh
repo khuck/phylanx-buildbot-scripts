@@ -47,6 +47,7 @@ export BOOST_DIR=${boost_path}
 #export LAPACK_ROOT=${LAPACK_DIR}
 #export BLAS_ROOT=${BLAS_DIR}
 #export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
+export hwloc_path=/usr/local/packages/hwloc/1.11.5
 
 echo ""
 echo "NB: "
