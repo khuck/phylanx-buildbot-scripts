@@ -110,7 +110,9 @@ configure_it()
     -DHPX_WITH_THREAD_IDLE_RATES=ON \
     -DHPX_WITH_PARCELPORT_MPI=ON \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
-    -DHPX_WITH_TOOLS=ON \
+    -DHPX_WITH_TOOLS=OFF \
+    -DHPX_WITH_TESTS=OFF \
+    -DHPX_WITH_EXAMPLES=OFF \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
@@ -120,7 +122,7 @@ configure_it()
 build_it()
 {
     cd ${HPX_ROOT}
-    make ${makej} core
+    make ${makej}
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
