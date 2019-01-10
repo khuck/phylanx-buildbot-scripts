@@ -100,7 +100,7 @@ configure_it()
         high_count="-DHPX_WITH_MAX_CPU_COUNT=${nprocs} "
     fi
 
-    if [ -z "$MPICC" ] ; then
+    if [ "x$MPICC" = "x" ] ; then
         mpi_opt="-DHPX_WITH_PARCELPORT_MPI=ON"
     fi
 

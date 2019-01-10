@@ -51,6 +51,8 @@ export hwloc_path=/usr/local/packages/hwloc/1.11.5
 
 # export MPICC=mpicc
 # export MPICXX=mpicxx
+unset MPICC
+unset MPICXX
 
 echo ""
 echo "NB: "
