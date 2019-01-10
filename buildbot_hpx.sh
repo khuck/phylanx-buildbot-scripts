@@ -101,7 +101,7 @@ configure_it()
     fi
 
     if [ -z "$MPICC" ] ; then
-        mpi_opt="-DHPX_WITH_PARCELPORT_MPI=ON" \
+        mpi_opt="-DHPX_WITH_PARCELPORT_MPI=ON"
     fi
 
     set -x
