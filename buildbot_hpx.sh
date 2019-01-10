@@ -100,6 +100,10 @@ configure_it()
         high_count="-DHPX_WITH_MAX_CPU_COUNT=${nprocs} "
     fi
 
+    if [ -z "$MPICC" ] ; then
+        mpi_opt="-DHPX_WITH_PARCELPORT_MPI=ON" \
+    fi
+
     set -x
     cmake \
     -DCMAKE_BUILD_TYPE=${buildtype} \
@@ -108,7 +112,7 @@ configure_it()
     -DHWLOC_ROOT=${hwloc_path} \
     -DCMAKE_INSTALL_PREFIX=. \
     -DHPX_WITH_THREAD_IDLE_RATES=ON \
-    -DHPX_WITH_PARCELPORT_MPI=ON \
+    ${mpi_opt} \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
     -DHPX_WITH_TOOLS=OFF \
     -DHPX_WITH_TESTS=OFF \

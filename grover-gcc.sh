@@ -1,4 +1,4 @@
-module load mpi/openmpi-2.1_gcc-7.3
+#module load mpi/openmpi-2.1_gcc-7.3
 #module load gcc/7.1
 #module load python/3.3.4
 module load cmake
@@ -49,8 +49,8 @@ export BOOST_DIR=${boost_path}
 #export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
 export hwloc_path=/usr/local/packages/hwloc/1.11.5
 
-export MPICC=mpicc
-export MPICXX=mpicxx
+# export MPICC=mpicc
+# export MPICXX=mpicxx
 
 echo ""
 echo "NB: "
