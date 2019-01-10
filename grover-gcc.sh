@@ -1,5 +1,5 @@
 #module load mpi/openmpi-2.1_gcc-7.3
-#module load gcc/7.1
+module load gcc/7.3
 #module load python/3.3.4
 module load cmake
 module load python/3.6.4
