@@ -106,6 +106,8 @@ configure_it()
 
     set -x
     cmake \
+    -DCMAKE_CXX_COMPILER=`which ${mycxx}` \
+    -DCMAKE_C_COMPILER=`which ${mycc}` \
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -DBOOST_ROOT=${boost_path} \
     ${alloc_opts} \
