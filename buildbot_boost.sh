@@ -18,21 +18,21 @@ fi
 
 mkdir -p ${workdir}
 cd ${workdir}
-if [ ! -d boost_1_65_0 ] ; then
-    if [ ! -f boost_1_65_0.tar.bz2 ] ; then
-        wget https://sourceforge.net/projects/boost/files/boost/1.65.0/boost_1_65_0.tar.bz2
+if [ ! -d boost_1_65_1 ] ; then
+    if [ ! -f boost_1_65_1.tar.bz2 ] ; then
+        wget https://sourceforge.net/projects/boost/files/boost/1.65.1/boost_1_65_1.tar.bz2
     fi
-    tar -xjf boost_1_65_0.tar.bz2
+    tar -xjf boost_1_65_1.tar.bz2
 fi
 
 # track the output
 set -x
 
-cd ${workdir}/boost_1_65_0
+cd ${workdir}/boost_1_65_1
 if [ ${mycc} == "clang" ] ; then
     ./bootstrap.sh --prefix=${boost_path} --with-toolset=clang
 else
-    ./bootstrap.sh --prefix=${boost_path}_avx --with-toolset=gcc
+    ./bootstrap.sh --prefix=${boost_path} --with-toolset=gcc
 fi
 
 # there will be some boost errors.  Don't fail!
