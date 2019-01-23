@@ -100,17 +100,27 @@ configure_it()
         high_count="-DHPX_WITH_MAX_CPU_COUNT=${nprocs} "
     fi
 
+    if [ "x$MPICC" = "x" ] ; then
+        mpi_opt="-DHPX_WITH_PARCELPORT_MPI=OFF"
+    else
+        mpi_opt="-DHPX_WITH_PARCELPORT_MPI=ON"
+    fi
+
     set -x
     cmake \
+    -DCMAKE_CXX_COMPILER=`which ${mycxx}` \
+    -DCMAKE_C_COMPILER=`which ${mycc}` \
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -DBOOST_ROOT=${boost_path} \
     ${alloc_opts} \
     -DHWLOC_ROOT=${hwloc_path} \
     -DCMAKE_INSTALL_PREFIX=. \
     -DHPX_WITH_THREAD_IDLE_RATES=ON \
-    -DHPX_WITH_PARCELPORT_MPI=ON \
+    ${mpi_opt} \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
-    -DHPX_WITH_TOOLS=ON \
+    -DHPX_WITH_TOOLS=OFF \
+    -DHPX_WITH_TESTS=OFF \
+    -DHPX_WITH_EXAMPLES=OFF \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
@@ -120,7 +130,7 @@ configure_it()
 build_it()
 {
     cd ${HPX_ROOT}
-    make ${makej} core
+    make ${makej}
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then

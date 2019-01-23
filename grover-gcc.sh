@@ -1,5 +1,5 @@
-module load mpi/openmpi-2.1_gcc-7.3
-#module load gcc/7.1
+#module load mpi/openmpi-2.1_gcc-7.3
+module load gcc/7.3
 #module load python/3.3.4
 module load cmake
 module load python/3.6.4
@@ -49,8 +49,10 @@ export BOOST_DIR=${boost_path}
 #export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LAPACK_ROOT}/lib64/pkgconfig
 export hwloc_path=/usr/local/packages/hwloc/1.11.5
 
-export MPICC=mpicc
-export MPICXX=mpicxx
+# export MPICC=mpicc
+# export MPICXX=mpicxx
+unset MPICC
+unset MPICXX
 
 echo ""
 echo "NB: "
@@ -61,5 +63,5 @@ echo "  Build output will be in ${basedir}/build-${myarch}."
 echo ""
 echo "CC = `which $mycc`"
 echo "CXX = `which $mycxx`"
-echo "MPICC = `which mpicc`"
-echo "MPICXX = `which mpicxx`"
+#echo "MPICC = `which mpicc`"
+#echo "MPICXX = `which mpicxx`"
