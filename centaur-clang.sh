@@ -1,10 +1,13 @@
-gcc_dir=/usr/local/packages/gcc/6.3.0-ppc64le
-llvm_dir=/usr/local/packages/llvm/5.0.0-ppc64le
+#gcc_dir=/usr/local/packages/llvm/5.0.2
+#llvm_dir=/usr/local/packages/llvm/5.0.2
+export SPACK_ROOT=$HOME/src/hpx/spack
+. $SPACK_ROOT/share/spack/setup-env.sh
+spack load llvm
 cmake_dir=/usr/local/packages/cmake/3.9.2-ppc64le
 python3_dir=/usr/local/packages/python3/3.6.3
-mpi_dir=/usr/local/packages/openmpi/3.1.1-clang5
-PATH=${llvm_dir}/bin:${gcc_dir}/bin:${cmake_dir}/bin:${python3_dir}/bin:${mpi_dir}/bin:$PATH
-LD_LIBRARY_PATH=${llvm_dir}/lib:${gcc_dir}/lib:${gcc_dir}/lib64:${python3_dir}/lib:${mpi_dir}/lib:$LD_LIBRARY_PATH
+mpi_dir=/usr/local/packages/openmpi/3.1.1-clang5.0
+PATH=${cmake_dir}/bin:${python3_dir}/bin:${mpi_dir}/bin:$PATH
+LD_LIBRARY_PATH=${python3_dir}/lib:${mpi_dir}/lib:$LD_LIBRARY_PATH
 export PYTHONDOCS=${python3_dir}/html
 
 # module load python/3.3.4
