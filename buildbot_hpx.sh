@@ -122,7 +122,7 @@ configure_it()
     -DHPX_WITH_TOOLS=OFF \
     -DHPX_WITH_TESTS=OFF \
     -DHPX_WITH_EXAMPLES=OFF \
-    -DDHPX_WITH_THREAD_MANAGER_IDLE_BACKOFF=OFF \
+    -DHPX_WITH_THREAD_MANAGER_IDLE_BACKOFF=OFF \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
