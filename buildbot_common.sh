@@ -39,7 +39,7 @@ makej="-j ${one_half} -l ${nprocs}"
 if [ ${hostname} == "taudev" ]; then
     makejtest="-j 2 -l ${nprocs}"
 elif [ ${hostname} == "grover" ]; then
-    makejtest="-j 10 -l ${one_half}"
+    makejtest="-j 6 -l ${one_half}"
 elif [ ${hostname} == "delphi" ]; then
     makejtest="-j 16 -l ${one_half}"
 elif [ ${hostname} == "centaur" ]; then
