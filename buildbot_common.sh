@@ -20,10 +20,11 @@ osname=`uname`
 if [ ${osname} == "Darwin" ]; then
     nprocs=`sysctl -n hw.ncpu`
 else
+    nprocs=`nproc --all`
     # Get the true number of total cores, not threads.
     ncores=`lscpu | grep -E '^Core' | awk '{print $NF}'`
     nsockets=`lscpu | grep -E '^Socket' | awk '{print $NF}'`
-    let nprocs=$ncores*$nsockets
+    let ntcores=$ncores*$nsockets
 fi
 
 # be a good citizen. ;)
@@ -31,13 +32,13 @@ fi
 # Delphi should be < 9
 # Centaur should be < 5
 # Grover should be < 17
-let max_load=$nprocs/2
-let max_jobs=$nprocs/4
+let max_load=$ntcores/2
+let max_jobs=$ntcores/4
 
 # laptops and so forth can go full steam ahead...
 if [ $nprocs -lt 16 ] ; then
-    let max_load=$nprocs
-    let max_jobs=$nprocs/2
+    let max_load=$ntcores
+    let max_jobs=$ntcores/2
 fi
 
 makej="-j ${max_jobs} -l ${max_load}"
