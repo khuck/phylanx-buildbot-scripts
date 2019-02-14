@@ -17,36 +17,30 @@ fi
 
 export nprocs=2
 osname=`uname`
-hostname=`hostname`
 if [ ${osname} == "Darwin" ]; then
     nprocs=`sysctl -n hw.ncpu`
 else
-    nprocs=`nproc --all`
+    # Get the true number of total cores, not threads.
+    ncores=`lscpu | grep -E '^Core' | awk '{print $NF}'`
+    nsockets=`lscpu | grep -E '^Socket' | awk '{print $NF}'`
+    let nprocs=$ncores*$nsockets
 fi
 
-let one_half=$nprocs/4
+# be a good citizen. ;)
+# There will be 3 concurrent builds, so use less than 1/3 of the cores.
+# Delphi should be < 9
+# Centaur should be < 5
+# Grover should be < 17
+let max_load=$nprocs/2
+let max_jobs=$nprocs/4
+
 # laptops and so forth can go full steam ahead...
 if [ $nprocs -lt 16 ] ; then
-    let one_half=$nprocs/2
-fi
-# The KNL gets bogged down with 68 concurrent builds...
-if [ $nprocs -gt 160 ] ; then
-    let one_half=$nprocs/8
+    let max_load=$nprocs
+    let max_jobs=$nprocs/2
 fi
 
-makej="-j ${one_half} -l ${nprocs}"
-
-if [ ${hostname} == "taudev" ]; then
-    makejtest="-j 2 -l ${nprocs}"
-elif [ ${hostname} == "grover" ]; then
-    makejtest="-j 6 -l ${one_half}"
-elif [ ${hostname} == "delphi" ]; then
-    makejtest="-j 16 -l ${one_half}"
-elif [ ${hostname} == "centaur" ]; then
-    makejtest="-j 20 -l ${one_half}"
-else
-    makejtest="-j 4 -l ${nprocs}"
-fi
+makej="-j ${max_jobs} -l ${max_load}"
 
 # Assume that the buildbot script directory is in phylanx/tools/buildbot
 # of the phylanx project.
