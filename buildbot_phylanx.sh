@@ -69,7 +69,7 @@ test_phylanx()
 {
     cd ${phylanx_build_dir}
 #    set +e
-    make ${makejtest} -k tests 
+    make ${makej} -k tests 
 #    rc=$?
 #    if [ $rc -ne 0 ] ; then
 #        make test
