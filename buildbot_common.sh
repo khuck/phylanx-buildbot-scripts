@@ -71,6 +71,9 @@ eigen_build_dir=${buildprefix}/eigen3-${buildtype}
 blaze_src_dir=${sourcedir}/blaze-head
 blaze_build_dir=${buildprefix}/blaze-${buildtype}
 
+blazetensor_src_dir=${sourcedir}/blaze_tensor
+blazetensor_build_dir=${buildprefix}/blaze_tensor-${buildtype}
+
 high5_src_dir=${sourcedir}/HighFive-1.5
 high5_build_dir=${buildprefix}/high5-${buildtype}
 
