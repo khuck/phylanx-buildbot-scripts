@@ -34,7 +34,7 @@ configure_phylanx()
     #export LDFLAGS="${myldflags} ${HDF5_LDFLAGS}"
     export LDFLAGS=${myldflags}
     export blaze_DIR=${blaze_build_dir}
-    export blazetensor_DIR=${blazetensor_build_dir}
+    export BlazeTensor_DIR=${blazetensor_build_dir}
     export HighFive_DIR=${high5_build_dir}
 
     set -x
@@ -42,7 +42,7 @@ configure_phylanx()
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -Dblaze_DIR=${blaze_DIR} \
     -DPHYLANX_WITH_BLAZE_TENSOR=ON \
-    -Dblazetensor_DIR=${blazetensor_DIR} \
+    -DBlazeTensor_DIR=${BlazeTensor_DIR} \
     ${blaze_cmake_extras} \
     -Dpybind11_DIR=${pybind_build_dir}/share/cmake/pybind11 \
     -DHPX_DIR=${HPX_ROOT}/lib/cmake/HPX \
