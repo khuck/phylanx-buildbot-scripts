@@ -42,6 +42,7 @@ if [ $nprocs -lt 16 ] ; then
 fi
 
 makej="-j ${max_jobs} -l ${max_load}"
+export CTEST_PARALLEL_LEVEL=${max_jobs}
 
 # Assume that the buildbot script directory is in phylanx/tools/buildbot
 # of the phylanx project.
