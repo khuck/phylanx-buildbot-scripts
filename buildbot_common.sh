@@ -43,6 +43,7 @@ fi
 
 makej="-j ${max_jobs} -l ${max_load}"
 export CTEST_PARALLEL_LEVEL=${max_jobs}
+export HPX_COMMANDLINE_OPTIONS=--hpx:bind=none
 
 # Assume that the buildbot script directory is in phylanx/tools/buildbot
 # of the phylanx project.
