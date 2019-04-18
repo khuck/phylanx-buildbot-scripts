@@ -45,6 +45,7 @@ get_source()
     cd ${hpx_src_dir}
     git reset --hard
     git checkout master
+    git checkout stable
     git pull
     # git checkout 31e4a27da5e9c83ec9db901333d27174f893a07a
     if [ -d apex ] ; then
