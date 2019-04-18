@@ -43,7 +43,7 @@ get_source()
         git clone --depth 1 https://github.com/STEllAR-GROUP/hpx.git -b master
     fi
     cd ${hpx_src_dir}
-    git reset --hard
+    #git reset --hard
     git checkout master
     git pull
     # git checkout 31e4a27da5e9c83ec9db901333d27174f893a07a
@@ -88,7 +88,7 @@ configure_it()
     else
         activeharmony_opts="-DAPEX_WITH_ACTIVEHARMONY=TRUE -DACTIVEHARMONY_ROOT=${activeharmony_path}"
     fi
-    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=TRUE -DHPX_WITH_APEX_TAG=develop"
+    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=FALSE -DHPX_WITH_APEX_TAG=develop"
     export CC=${mycc}
     export CXX=${mycxx}
     export FC=${myfc}

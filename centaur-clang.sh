@@ -29,7 +29,8 @@ fi
 export basedir=$( dirname "${scriptdir}" )
 export myarch=${host}-${arch}-${uname}-${mycc}
 export buildtype=Release
-export malloc=tcmalloc
+#export malloc=tcmalloc
+export malloc=system
 export contrib=${basedir}/build-${myarch}/contrib
 export malloc_path=/usr/local/packages/gperftools/2.5
 export activeharmony_path=/usr/local/packages/activeharmony/4.6.0-${arch}
