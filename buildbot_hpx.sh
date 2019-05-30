@@ -123,7 +123,7 @@ configure_it()
     ${mpi_opt} \
     -DHPX_WITH_PARCEL_COALESCING=OFF \
     -DHPX_WITH_TOOLS=OFF \
-    -DHPX_WITH_TESTS=OFF \
+    -DHPX_WITH_TESTS=ON \
     -DHPX_WITH_EXAMPLES=OFF \
     -DHPX_WITH_THREAD_MANAGER_IDLE_BACKOFF=OFF \
     ${apex_opts} \
