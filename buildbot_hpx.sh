@@ -44,6 +44,8 @@ get_source()
     fi
     cd ${hpx_src_dir}
     #git reset --hard
+    git fetch
+    git fetch --tags
     git checkout master
     git pull
     git checkout stable
