@@ -48,8 +48,7 @@ get_source()
     git fetch --tags
     git checkout master
     git pull
-    git checkout stable
-    # git checkout 31e4a27da5e9c83ec9db901333d27174f893a07a
+    #git checkout stable
     if [ -d apex ] ; then
         cd apex
         git fetch --tags
