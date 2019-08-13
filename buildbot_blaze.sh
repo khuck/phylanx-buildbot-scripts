@@ -5,7 +5,7 @@ if [ $# -eq 3 ] ; then
     buildtype=$1
     step=$2
 fi
-echo "Component HPX, buildtype ${buildtype}, step ${step}"
+echo "Component Blaze, buildtype ${buildtype}, step ${step}"
 
 # where is this script?
 if [ -z ${scriptdir} ] ; then
@@ -35,7 +35,7 @@ configure_blaze()
     #mv blaze-3.4 blaze-head
 
     # Git method
-    git clone -d 0 -b master https://bitbucket.org/blaze-lib/blaze.git blaze-head
+    git clone --depth 0 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
     cd blaze-head
     git checkout b0358851a6f23e29d8635bcb25e0db6981b5ebf9
     cd ..
