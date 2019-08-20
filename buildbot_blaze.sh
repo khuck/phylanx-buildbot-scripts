@@ -36,9 +36,9 @@ configure_blaze()
 
     # Git method
     git clone --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
-    cd blaze-head
-    git checkout b0358851a6f23e29d8635bcb25e0db6981b5ebf9
-    cd ..
+    #cd blaze-head
+    #git checkout b0358851a6f23e29d8635bcb25e0db6981b5ebf9
+    #cd ..
 
     echo "Removing old blaze build..."
     rm -rf ${blaze_build_dir}
