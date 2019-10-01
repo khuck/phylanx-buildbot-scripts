@@ -45,11 +45,10 @@ get_source()
     cd ${hpx_src_dir}
     #git reset --hard
     git fetch
-    git fetch --tags
+    git fetch --tags --force
     git checkout master
     git pull
     git checkout stable
-    # git checkout 31e4a27da5e9c83ec9db901333d27174f893a07a
     if [ -d apex ] ; then
         cd apex
         git fetch --tags

@@ -6,6 +6,8 @@ if [ -z ${scriptdir} ] ; then
 fi
 
 myhost=`hostname`
+# In case there are extra qualifiers on the hostname
+myhost=`basename -s .nic.uoregon.edu ${myhost}`
 osname=`uname`
 
 if [ "x${host}" == "xtalapas" ] ; then
