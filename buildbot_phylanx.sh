@@ -50,6 +50,7 @@ configure_phylanx()
     -DPHYLANX_WITH_MALLOC=${malloc} \
     -DCMAKE_INSTALL_PREFIX=${phylanx_install_dir} \
     -DPYTHON_EXECUTABLE:FILEPATH=${pythonpath} \
+    -DPHYLANX_WITH_CXX17=on \
     ${phylanx_src_dir}
     #-DPHYLANX_WITH_HIGHFIVE=ON \
     #-DHighFive_DIR=${high5_build_dir} \
