@@ -10,7 +10,7 @@ fi
    
 workdir=/dev/shm/src
 
-if [ "${host}" == "centaur" ] || [ "${host}" == "delphi" ] || [ "${host}" == "grover" ] || [ "${host}" == "talapas" ] ; then
+if [ "${host}" == "centaur" ] || [ "${host}" == "cyclops" ] || [ "${host}" == "delphi" ] || [ "${host}" == "grover" ] || [ "${host}" == "talapas" ] ; then
     workdir=${sourcedir}/otf2
     echo ${workdir}
 fi  

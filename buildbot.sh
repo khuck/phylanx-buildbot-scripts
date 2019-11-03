@@ -22,6 +22,8 @@ elif [ ${myhost} == "grover" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "centaur" ] ; then
     . ${scriptdir}/${myhost}-clang.sh
+elif [ ${myhost} == "cyclops" ] ; then
+    . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "talapas" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "taudev" ] ; then
@@ -134,7 +136,7 @@ if [ ${myhost} == "talapas" ] ; then
 fi
 
 # if necessary, build boost
-if [ ${myhost} == "delphi" ] || [ ${myhost} == "centaur" ] || [ ${myhost} == "talapas" ] ; then
+if [ ${myhost} == "delphi" ] || [ ${myhost} == "centaur" ] || [ "${host}" == "cyclops" ] || [ ${myhost} == "talapas" ] ; then
     if [ ! -d ${boost_path} ] ; then
         ${scriptdir}/buildbot_boost.sh && :
     fi

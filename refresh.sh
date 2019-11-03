@@ -27,6 +27,9 @@ git fetch --tags --force
 git checkout master
 git pull
 git checkout stable
+if [ ! -d apex ] ; then
+    git clone git@github.com:khuck/xpress-apex apex
+fi
 cd apex
 git fetch
 git fetch --tags --force
