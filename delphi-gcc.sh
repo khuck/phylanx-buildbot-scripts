@@ -1,5 +1,5 @@
 module load mpi/openmpi-2.0_gcc-6.4
-module load gcc/7.1
+module load gcc/7.3
 module load python/3.6.4
 module list
 export CMAKE=/usr/local/packages/cmake/3.9.3
