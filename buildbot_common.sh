@@ -19,6 +19,7 @@ export nprocs=2
 osname=`uname`
 if [ ${osname} == "Darwin" ]; then
     nprocs=`sysctl -n hw.ncpu`
+    ntcores=`sysctl -n hw.ncpu`
 else
     nprocs=`nproc --all`
     # Get the true number of total cores, not threads.
