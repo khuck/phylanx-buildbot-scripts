@@ -1,4 +1,4 @@
-module load mpi/openmpi-2.0_gcc-6.4
+module --ignore-cache load "mpi/openmpi-2.0_gcc-6.4"
 module load gcc/7.3
 module load python/3.6.4
 module list
