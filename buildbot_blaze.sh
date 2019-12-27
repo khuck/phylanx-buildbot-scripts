@@ -35,11 +35,12 @@ configure_blaze()
     #mv blaze-3.4 blaze-head
 
     # Git method
-    git clone --depth 1 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
+    #git clone --depth 1 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
+    #git clone --depth 100 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
 
-    #cd blaze-head
-    #git checkout b0358851a6f23e29d8635bcb25e0db6981b5ebf9
-    #cd ..
+    cd blaze-head
+    git checkout fd397e60717c4870d942055496d5b484beac9f1a
+    cd ..
 
     echo "Removing old blaze build..."
     rm -rf ${blaze_build_dir}
