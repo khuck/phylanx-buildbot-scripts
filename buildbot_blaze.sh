@@ -21,7 +21,7 @@ configure_blaze()
 {
     cd ${top}/src
     # force new download of blaze
-    rm -rf blaze*
+    rm -rf blaze-head
 
     # Tar file method
     #filename=HEAD.tar.gz
@@ -35,11 +35,11 @@ configure_blaze()
     #mv blaze-3.4 blaze-head
 
     # Git method
-    #git clone --depth 1 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
+    git clone --depth 1 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
     #git clone --depth 100 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
 
     cd blaze-head
-    git checkout fd397e60717c4870d942055496d5b484beac9f1a
+    #git checkout fd397e60717c4870d942055496d5b484beac9f1a
     cd ..
 
     echo "Removing old blaze build..."
