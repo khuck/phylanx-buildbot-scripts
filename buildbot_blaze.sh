@@ -21,7 +21,7 @@ configure_blaze()
 {
     cd ${top}/src
     # force new download of blaze
-    rm -rf blaze*
+    rm -rf blaze-head
 
     # Tar file method
     #filename=HEAD.tar.gz
