@@ -7,6 +7,7 @@ module load gcc-7.3.0-gcc-4.9.3-wc3hmpi
 # Without exceptions
 module load openmpi-3.1.4-gcc-7.3.0-dkwj752
 module load python-3.7.0-gcc-7.3.0-mkfg5va
+module load py-numpy-1.17.4-gcc-7.3.0-onthirk
 module load cmake-3.16.1-gcc-7.3.0-leo4lqw
 module list
 
