@@ -21,7 +21,7 @@ fi
 
 pythonpath=`which python3`
 
-configure_pybind()
+get_pybind()
 {
     if [ ! -d ${pybind_src_dir} ] ; then
         cd $(dirname ${pybind_src_dir})
@@ -30,6 +30,10 @@ configure_pybind()
         fi
         tar -xzf v2.2.2.tar.gz
     fi
+}
+
+configure_pybind()
+{
     echo "Removing old pybind11 build..."
     rm -rf ${pybind_build_dir}
     mkdir -p ${pybind_build_dir}
@@ -53,6 +57,7 @@ build_pybind()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
+    get_pybind
     configure_pybind
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

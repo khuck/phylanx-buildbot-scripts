@@ -17,7 +17,7 @@ if [ -z ${high5_src_dir} ] ; then
     . ${scriptdir}/buildbot_common.sh
 fi
 
-configure_high5()
+get_high5()
 {
     cd ${top}/src
     filename=v1.5.tar.gz
@@ -27,6 +27,10 @@ configure_high5()
     wget https://github.com/BlueBrain/HighFive/archive/${filename}
     echo "expanding tar file..."
     tar -xzf ${filename}
+}
+
+configure_high5()
+{
     echo "Removing old high5 build..."
     rm -rf ${high5_build_dir}
     mkdir -p ${high5_build_dir}
@@ -56,6 +60,7 @@ install_high5()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
+    get_high5
     configure_high5
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

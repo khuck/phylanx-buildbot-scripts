@@ -17,11 +17,15 @@ if [ -z ${blaze_src_dir} ] ; then
     . ${scriptdir}/buildbot_common.sh
 fi
 
-configure_blazetensor()
+get_blazetensor()
 {
     cd ${top}/src
     rm -rf blaze_tensor
     git clone https://github.com/STEllAR-GROUP/blaze_tensor.git
+}
+
+configure_blazetensor()
+{
     echo "Removing old blaze build..."
     rm -rf ${blazetensor_build_dir}
     mkdir -p ${blazetensor_build_dir}
@@ -45,6 +49,7 @@ build_blazetensor()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
+    get_blazetensor
     configure_blazetensor
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

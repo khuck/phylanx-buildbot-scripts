@@ -17,7 +17,7 @@ if [ -z ${blaze_src_dir} ] ; then
     . ${scriptdir}/buildbot_common.sh
 fi
 
-configure_blaze()
+get_blaze()
 {
     cd ${top}/src
     # force new download of blaze
@@ -41,7 +41,10 @@ configure_blaze()
     #cd blaze-head
     #git checkout fd397e60717c4870d942055496d5b484beac9f1a
     #cd ..
+}
 
+configure_blaze()
+{
     echo "Removing old blaze build..."
     rm -rf ${blaze_build_dir}
     mkdir -p ${blaze_build_dir}
@@ -68,6 +71,7 @@ build_blaze()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
+    get_blaze
     configure_blaze
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then
