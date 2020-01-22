@@ -90,7 +90,7 @@ configure_it()
     else
         activeharmony_opts="-DAPEX_WITH_ACTIVEHARMONY=TRUE -DACTIVEHARMONY_ROOT=${activeharmony_path}"
     fi
-    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=FALSE -DHPX_WITH_APEX_TAG=develop"
+    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=true -DHPX_WITH_APEX_TAG=develop"
     export CC=${mycc}
     export CXX=${mycxx}
     export FC=${myfc}
@@ -103,6 +103,7 @@ configure_it()
         high_count="-DHPX_WITH_MAX_CPU_COUNT=${nprocs} "
     fi
 
+    MPICC=""
     if [ "x$MPICC" = "x" ] ; then
         mpi_opt="-DHPX_WITH_PARCELPORT_MPI=OFF"
     else
@@ -125,6 +126,7 @@ configure_it()
     -DHPX_WITH_TESTS=ON \
     -DHPX_WITH_EXAMPLES=OFF \
     -DHPX_WITH_THREAD_MANAGER_IDLE_BACKOFF=OFF \
+    -DHPX_WITH_PARCELPORT_LIBFABRIC=OFF \
     ${apex_opts} \
     ${cmake_extras} \
     ${high_count} \
