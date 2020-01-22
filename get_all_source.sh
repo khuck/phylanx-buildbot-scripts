@@ -102,7 +102,7 @@ else
 fi
 # Patch the blaze code
 cd ${srcdir}
-patch_templates blaze-head
+#patch_templates blaze-head
 
 # Next, get blaze_tensor
 cd ${srcdir}
@@ -116,7 +116,7 @@ else
     git pull
 fi
 # Patch the blaze_tensor code
-patch_templates blaze_tensor
+#patch_templates blaze_tensor
 
 # Next, get pybind
 cd ${srcdir}
