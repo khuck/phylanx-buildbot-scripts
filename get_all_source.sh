@@ -16,7 +16,7 @@ fi
 [ "$1" != "${1#/}" ] || usage
 
 basedir=$1
-srcdir=${basedir}/phylanx/tools/buildbot/src
+srcdir=${basedir}/tools/buildbot/src
 echo "Using base directory as: ${basedir}"
 #kill -INT $$
 
@@ -26,14 +26,16 @@ mkdir -p ${basedir}
 cd ${basedir}
 
 # First, get phylanx
-if [ ! -d ${basedir}/phylanx ] ; then
+if [ ! -f ${basedir}/CMakeLists.txt ] ; then
     git clone \
     --branch master \
     --depth 1 \
     --recurse-submodules \
     git@github.com:STEllAR-GROUP/phylanx.git
+    # Adjust the top level directory
+    basedir=$1/phylanx
+    srcdir=${basedir}/tools/buildbot/src
 else
-    cd ${basedir}/phylanx
     git fetch
     git fetch --tags --force
     git checkout master
@@ -41,7 +43,7 @@ else
 fi
 
 # Now, update the buildbot scripts
-cd ${basedir}/phylanx/tools/buildbot
+cd ${basedir}/tools/buildbot
 git fetch
 git fetch --tags --force
 git checkout master
