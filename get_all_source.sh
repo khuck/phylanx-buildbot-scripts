@@ -5,13 +5,6 @@ usage() {
     kill -INT $$
 }
 
-patch_templates() {
-    set +e
-    grep -rIl VT1 $1 | xargs sed -i -e 's/VT1/VBT1/g'
-    grep -rIl VT2 $1 | xargs sed -i -e 's/VT2/VBT2/g'
-    set -e
-}
-
 if [ $# -gt 1 ] ; then
     usage
 fi
@@ -100,9 +93,6 @@ else
     git checkout master
     git pull
 fi
-# Patch the blaze code
-cd ${srcdir}
-#patch_templates blaze-head
 
 # Next, get blaze_tensor
 cd ${srcdir}
@@ -115,8 +105,6 @@ else
     git checkout master
     git pull
 fi
-# Patch the blaze_tensor code
-#patch_templates blaze_tensor
 
 # Next, get pybind
 cd ${srcdir}

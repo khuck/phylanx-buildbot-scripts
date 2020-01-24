@@ -1,9 +1,10 @@
 module --ignore-cache load "mpi/openmpi-2.0_gcc-6.4"
 module load gcc/7.3
 module load python/3.6.4
+module load cmake
 module list
-export CMAKE=/usr/local/packages/cmake/3.9.3
-PATH=/usr/local/packages/cmake/3.9.3/bin:$PATH
+#export CMAKE=/usr/local/packages/cmake/3.9.3
+#PATH=/usr/local/packages/cmake/3.9.3/bin:$PATH
 
 # special flags for some library builds
 export mycflags="-fPIC"
