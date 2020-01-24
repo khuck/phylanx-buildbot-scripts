@@ -140,7 +140,7 @@ build_it()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
-    get_source
+    #get_source
     configure_it
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

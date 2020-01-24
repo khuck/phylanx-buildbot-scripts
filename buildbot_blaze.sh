@@ -71,7 +71,7 @@ build_blaze()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
-    get_blaze
+    #get_blaze
     configure_blaze
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

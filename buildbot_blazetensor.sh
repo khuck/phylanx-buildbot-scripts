@@ -49,7 +49,7 @@ build_blazetensor()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
-    get_blazetensor
+    #get_blazetensor
     configure_blazetensor
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

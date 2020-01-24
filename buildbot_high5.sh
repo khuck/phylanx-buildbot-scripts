@@ -60,7 +60,7 @@ install_high5()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
-    get_high5
+    #get_high5
     configure_high5
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then

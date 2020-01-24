@@ -57,7 +57,7 @@ build_pybind()
 }
 
 if [ ${step} == "all" ] || [ ${step} == "configure" ] ; then
-    get_pybind
+    #get_pybind
     configure_pybind
 fi
 if [ ${step} == "all" ] || [ ${step} == "compile" ] ; then
