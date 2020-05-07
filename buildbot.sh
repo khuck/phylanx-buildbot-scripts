@@ -22,6 +22,9 @@ elif [ ${myhost} == "grover" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "centaur" ] ; then
     . ${scriptdir}/${myhost}-clang.sh
+elif [ ${myhost} == "gorgon" ] ; then
+    myhost=cyclops
+    . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "cyclops" ] ; then
     . ${scriptdir}/${myhost}-gcc.sh
 elif [ ${myhost} == "talapas" ] ; then

@@ -26,7 +26,7 @@ get_blazetensor()
 
 configure_blazetensor()
 {
-    echo "Removing old blaze build..."
+    echo "Removing old blazetensor build..."
     rm -rf ${blazetensor_build_dir}
     mkdir -p ${blazetensor_build_dir}
     cd ${blazetensor_build_dir}

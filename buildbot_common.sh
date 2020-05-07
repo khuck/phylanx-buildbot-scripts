@@ -34,7 +34,8 @@ fi
 # Centaur should be < 5
 # Grover should be < 17
 let max_load=$ntcores
-let max_jobs=$ntcores/2
+#let max_jobs=$ntcores/2
+let max_jobs=$ntcores
 
 # laptops and so forth can go full steam ahead...
 if [ $nprocs -lt 16 ] ; then

@@ -64,6 +64,7 @@ else
     git fetch --tags --force
     git checkout master
     git pull
+    git clean -f
 fi
 
 # Also get the apex source
@@ -86,7 +87,7 @@ cd ${srcdir}
 if [ ! -d ${srcdir}/blaze-head ] ; then
     git clone \
     --depth 1 \
-    --branch master \
+    --branch v3.6 \
     https://bitbucket.org/blaze-lib/blaze.git blaze-head
 else
     cd ${srcdir}/blaze-head

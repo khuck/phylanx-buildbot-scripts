@@ -35,7 +35,7 @@ get_blaze()
     #mv blaze-3.4 blaze-head
 
     # Git method
-    git clone --depth 1 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
+    git clone --depth 1 --branch v3.6 https://bitbucket.org/blaze-lib/blaze.git blaze-head
     #git clone --depth 100 --branch master https://bitbucket.org/blaze-lib/blaze.git blaze-head
 
     #cd blaze-head

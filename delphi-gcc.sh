@@ -1,5 +1,6 @@
-module --ignore-cache load "mpi/openmpi-2.0_gcc-6.4"
-module load gcc/7.3
+#module --ignore-cache load "mpi/openmpi-2.0_gcc-6.4"
+#module load gcc/7.3
+module load mpi/openmpi-3.1.1_gcc-7.3
 module load python/3.6.4
 module load cmake
 module list
@@ -44,6 +45,8 @@ export HDF5_LDFLAGS="-L/usr/local/packages/szip/2.1/gcc-4.9/lib -ldl -lz -lsz"
 
 export MPICC=mpicc
 export MPICXX=mpicxx
+#export MPICC=""
+#export MPICXX=""
 
 echo ""
 echo "NB: "
