@@ -87,7 +87,7 @@ cd ${srcdir}
 if [ ! -d ${srcdir}/blaze-head ] ; then
     git clone \
     --depth 1 \
-    --branch v3.6 \
+    --branch master \
     https://bitbucket.org/blaze-lib/blaze.git blaze-head
 else
     cd ${srcdir}/blaze-head
