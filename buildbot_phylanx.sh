@@ -71,6 +71,7 @@ test_phylanx()
     cd ${phylanx_build_dir}
 #    set +e
     make ${makej} -k tests.unit
+    make ${makej} -k tests.unit.distributed.remote_run
     ctest -R tests.unit
 #    rc=$?
 #    if [ $rc -ne 0 ] ; then
