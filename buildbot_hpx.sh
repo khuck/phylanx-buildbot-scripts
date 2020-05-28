@@ -91,7 +91,7 @@ configure_it()
         activeharmony_opts="-DAPEX_WITH_ACTIVEHARMONY=TRUE -DACTIVEHARMONY_ROOT=${activeharmony_path}"
     fi
     #apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts} -DHPX_WITH_APEX_NO_UPDATE=true -DHPX_WITH_APEX_TAG=develop"
-    apex_opts="-DHPX_WITH_APEX=TRUE ${activeharmony_opts} ${otf2_opts} ${papi_opts}"
+    apex_opts="-DHPX_WITH_APEX=TRUE -DHPX_WITH_APEX_TAG=develop ${activeharmony_opts} ${otf2_opts} ${papi_opts}"
     export CC=${mycc}
     export CXX=${mycxx}
     export FC=${myfc}
