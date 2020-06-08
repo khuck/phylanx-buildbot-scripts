@@ -31,7 +31,7 @@ if [ ! -f ${basedir}/CMakeLists.txt ] ; then
     --branch master \
     --depth 1 \
     --recurse-submodules \
-    git@github.com:STEllAR-GROUP/phylanx.git
+    https://github.com/STEllAR-GROUP/phylanx.git
     # Adjust the top level directory
     basedir=$1/phylanx
     srcdir=${basedir}/tools/buildbot/src
@@ -57,7 +57,7 @@ if [ ! -d ${srcdir}/hpx ] ; then
     git clone \
     --branch master \
     --depth 1 \
-    git@github.com:STEllAR-GROUP/hpx.git
+    https://github.com/STEllAR-GROUP/hpx.git
 else
     cd ${srcdir}/hpx
     git fetch
@@ -73,7 +73,7 @@ if [ ! -d apex ] ; then
     git clone \
     --branch develop \
     --depth 1 \
-    git@github.com:khuck/xpress-apex apex
+    https://github.com/khuck/xpress-apex.git apex
 else
     cd ${srcdir}/hpx/apex
     git fetch
