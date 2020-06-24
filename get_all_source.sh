@@ -36,7 +36,7 @@ if [ ! -f ${basedir}/CMakeLists.txt ] ; then
     basedir=$1/phylanx
     srcdir=${basedir}/tools/buildbot/src
 else
-    git fetch
+    git fetch --force
     git fetch --tags --force
     git checkout master
     git pull
@@ -44,7 +44,7 @@ fi
 
 # Now, update the buildbot scripts
 cd ${basedir}/tools/buildbot
-git fetch
+git fetch --force
 git fetch --tags --force
 git checkout master
 git pull
@@ -60,7 +60,7 @@ if [ ! -d ${srcdir}/hpx ] ; then
     https://github.com/STEllAR-GROUP/hpx.git
 else
     cd ${srcdir}/hpx
-    git fetch
+    git fetch --force
     git fetch --tags --force
     git checkout master
     git pull
@@ -76,7 +76,7 @@ if [ ! -d apex ] ; then
     https://github.com/khuck/xpress-apex.git apex
 else
     cd ${srcdir}/hpx/apex
-    git fetch
+    git fetch --force
     git fetch --tags --force
     git checkout develop
     git pull
@@ -91,7 +91,7 @@ if [ ! -d ${srcdir}/blaze-head ] ; then
     https://bitbucket.org/blaze-lib/blaze.git blaze-head
 else
     cd ${srcdir}/blaze-head
-    git fetch
+    git fetch --force
     git fetch --tags --force
     git checkout master
     git pull
@@ -103,7 +103,7 @@ if [ ! -d ${srcdir}/blaze_tensor ] ; then
     git clone https://github.com/STEllAR-GROUP/blaze_tensor.git
 else
     cd ${srcdir}/blaze_tensor
-    git fetch
+    git fetch --force
     git fetch --tags --force
     git checkout master
     git pull
