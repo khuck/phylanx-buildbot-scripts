@@ -72,6 +72,7 @@ test_phylanx()
 #    set +e
     make ${makej} -k tests.unit
     make ${makej} -k tests.unit.distributed.remote_run
+    export CTEST_OUTPUT_ON_FAILURE=1
     ctest --timeout 100 -R tests.unit
 #    rc=$?
 #    if [ $rc -ne 0 ] ; then
