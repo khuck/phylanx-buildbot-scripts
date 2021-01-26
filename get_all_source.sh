@@ -112,7 +112,7 @@ fi
 # Next, get pybind
 cd ${srcdir}
 if [ ! -d ${srcdir}/pybind ] ; then
-    filename=v2.2.2.tar.gz
+    filename=v2.6.1.tar.gz
     if [ ! -f ${filename} ] ; then
         wget https://github.com/pybind/pybind11/archive/${filename}
     fi

@@ -61,7 +61,7 @@ phylanx_src_dir=$( dirname "${tmptop}" )
 phylanx_build_dir=${buildprefix}/phylanx-${buildtype}
 phylanx_install_dir=${buildprefix}/phylanx-${buildtype}-install
 
-pybind_src_dir=${sourcedir}/pybind11-2.2.2
+pybind_src_dir=${sourcedir}/pybind11-2.6.1
 pybind_build_dir=${buildprefix}/pybind-${buildtype}
 
 eigen_src_dir=${sourcedir}/eigen-eigen-5a0156e40feb

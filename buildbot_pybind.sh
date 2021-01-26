@@ -25,10 +25,11 @@ get_pybind()
 {
     if [ ! -d ${pybind_src_dir} ] ; then
         cd $(dirname ${pybind_src_dir})
-        if [ ! -f v2.2.2.tar.gz ] ; then
-            wget https://github.com/pybind/pybind11/archive/v2.2.2.tar.gz
+        if [ ! -f v2.6.1.tar.gz ] ; then
+            #wget https://github.com/pybind/pybind11/archive/v2.2.2.tar.gz
+            wget https://github.com/pybind/pybind11/archive/v2.6.1.tar.gz
         fi
-        tar -xzf v2.2.2.tar.gz
+        tar -xzf v2.6.1.tar.gz
     fi
 }
 
