@@ -3,7 +3,7 @@
 module load mpi/openmpi-3.1.1_gcc-7.3
 module load python/3.6.4
 unset PYTHONHOME  # annoying
-module load cmake/3.15.1
+module load cmake/3.19.6
 module list
 #export CMAKE=/usr/local/packages/cmake/3.9.3
 #PATH=/usr/local/packages/cmake/3.9.3/bin:$PATH
