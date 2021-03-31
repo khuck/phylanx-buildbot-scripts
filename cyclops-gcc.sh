@@ -1,4 +1,4 @@
-module load gcc/7.3 cmake/3.15.4 python/3.8.0 openmpi/4.0.1-gcc7.3
+module load gcc/7.3 cmake/3.19.6 python/3.8.0 openmpi/4.0.1-gcc7.3
 
 # special flags for some library builds
 export mycflags="-fPIC"
