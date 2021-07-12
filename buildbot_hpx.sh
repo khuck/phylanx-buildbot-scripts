@@ -117,6 +117,7 @@ configure_it()
     -DCMAKE_C_COMPILER=`which ${mycc}` \
     -DCMAKE_BUILD_TYPE=${buildtype} \
     -DBOOST_ROOT=${boost_path} \
+    -DHPX_WITH_FETCH_ASIO=ON \
     ${alloc_opts} \
     -DHWLOC_ROOT=${hwloc_path} \
     -DCMAKE_INSTALL_PREFIX=. \
